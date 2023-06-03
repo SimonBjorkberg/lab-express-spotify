@@ -68,7 +68,7 @@
   border-radius: 8px;
   padding: 20px;
   margin: 0 auto;
-  width: 60%; /* Adjust the width as needed */
+  width: 60%;
 }
 
 .previews ul {
@@ -77,16 +77,16 @@
   padding: 0;
   margin: 0;
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap to a new line */
-  justify-content: center; /* Center items horizontally */
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .previews li {
-  margin: 10px; /* Add spacing around items */
+  margin: 10px;
   width: calc(
     100% / 3 - 20px
-  ); /* Calculate the width based on maximum 3 items per row */
-  max-width: 300px; /* Set a maximum width for each item */
+  ); 
+  max-width: 300px;
 }
 
 .previews p {
