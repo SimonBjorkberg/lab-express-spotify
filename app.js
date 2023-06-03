@@ -29,28 +29,32 @@ app.get("/", (req, res) => {
 
 app.get("/artist-search-results", (req, res) => {
   spotifyApi
-    .getArtist("2hazSY4Ef3aB9ATXW7F5w3")
+    .searchArtists(req.query.artistSearch)
     .then((data) => {
-      console.log("artists information", data.body);
-      res.render("artist-search-results", {
-        data,
-        image: data.body.images[2].url,
-      });
+      const artist = data.body.artists.items;
+      res.render("artist-search-results", { artist });
     })
     .catch((err) => console.log(err));
 });
 
 app.get("/albums/:artistId", (req, res) => {
   spotifyApi
-    .getArtistAlbums("2hazSY4Ef3aB9ATXW7F5w3")
+    .getArtistAlbums(req.params.artistId)
     .then((data) => {
-      const albums = data.body.items.map((album) => {
-        return {
-          name: album.name,
-          image: album.images[2].url,
-        };
-      });
+      const albums = data.body.items;
+      console.log(albums);
       res.render("albums", { albums });
+    })
+    .catch((err) => console.log(err));
+});
+
+app.get("/tracks/:albumId", (req, res) => {
+  spotifyApi
+    .getAlbumTracks(req.params.albumId)
+    .then((data) => {
+      const tracks = data.body.items;
+      console.log(tracks);
+      res.render("tracks", { tracks });
     })
     .catch((err) => console.log(err));
 });

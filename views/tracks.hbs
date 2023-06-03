@@ -1,0 +1,13 @@
+<div class="previews">
+  <ul>
+    {{#each tracks}}
+      <li>
+        <p>{{this.name}}</p>
+        <audio controls>
+          <source src={{this.preview_url}} type="audio/mpeg" />
+          Your browser does not support this
+        </audio>
+      </li>
+    {{/each}}
+  </ul>
+</div>

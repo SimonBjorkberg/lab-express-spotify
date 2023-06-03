@@ -1,3 +1,98 @@
 .container {
-    padding: 50px;
+  padding-top: 300px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.container > form {
+  width: 20%;
+}
+.container > form > input {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.container > form > button {
+  margin: 10px auto auto;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.artist-list {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  list-style: none;
+  padding: 0;
+  margin: auto;
+}
+
+.artist-list li {
+  flex-basis: calc(33.33% - 10px);
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  text-align: center;
+}
+
+.artist-list li p {
+  margin-bottom: 10px;
+}
+
+.artist-list li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.artist-list li a {
+  display: block;
+  text-align: center;
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.previews {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 0 auto;
+  width: 60%; /* Adjust the width as needed */
+}
+
+.previews ul {
+  width: 90%;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to a new line */
+  justify-content: center; /* Center items horizontally */
+}
+
+.previews li {
+  margin: 10px; /* Add spacing around items */
+  width: calc(
+    100% / 3 - 20px
+  ); /* Calculate the width based on maximum 3 items per row */
+  max-width: 300px; /* Set a maximum width for each item */
+}
+
+.previews p {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
 }
